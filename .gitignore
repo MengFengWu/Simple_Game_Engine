@@ -31,4 +31,15 @@
 *.out
 *.app
 
+# Makefiles
+*makefile
+
+## OSX artifacts
 *.DS_Store
+
+## Dear ImGui artifacts
+imgui.ini
+imgui*.ini
+
+## VScode artifacts
+.vscode
