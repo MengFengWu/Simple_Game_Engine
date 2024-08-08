@@ -1,14 +1,19 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+#include "os_getPath.h"
 #include "window.h"
 #include "window_debug.h"
 #include "window_resource.h"
 #include "window_demo.h"
 #include "window_object.h"
 #include "window_attribute.h"
+#include "window_editor.h"
 #include "menubar.h"
 #include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
+#include <string>
 #define GL_SILENCE_DEPRECATION
 #if defined(IMGUI_IMPL_OPENGL_ES2)
 #include <GLES2/gl2.h>
@@ -50,6 +55,11 @@ int main(int, char**)
     //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 3.0+ only
 #endif
 
+    // Set the working directory to the exec.’s directory
+    std::string exeDir = getExecutablePath();
+    exeDir = exeDir.substr(0, exeDir.find_last_of("/\\"));
+    chdir(exeDir.c_str());
+    
     // Create window with graphics context
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
     GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Simple Game Engine (alpha 1.0)", nullptr, nullptr);
@@ -57,6 +67,8 @@ int main(int, char**)
     Window_Demo demoPanel;
     Window_Object objectPanel;
     Window_Attribute attributePanel;
+    Window_Editor editorPanel;
+    editorPanel.loadFile("./projects/newproj/src/main.cpp");
     Menubar menubar;
     
     if (window == nullptr)
@@ -137,6 +149,7 @@ int main(int, char**)
             demoPanel.show();
             objectPanel.show();
             attributePanel.show();
+            editorPanel.show();
             menubar.show();
             ImGui::ShowDemoWindow(&show_demo_window);
 

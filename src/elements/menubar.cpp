@@ -23,10 +23,10 @@ bool Menubar::show()
             if(ImGui::MenuItem("Create")) 
             { 
             }
-            if(ImGui::MenuItem("Open", "Ctrl+O")) 
+            if(ImGui::MenuItem("Open", "Ctrl-O")) 
             { 
             }
-            if(ImGui::MenuItem("Save", "Ctrl+S")) 
+            if(ImGui::MenuItem("Save", "Ctrl-S")) 
             {
             }
             if(ImGui::MenuItem("Save as..")) 
@@ -36,10 +36,10 @@ bool Menubar::show()
         }
         if(ImGui::BeginMenu("Edit"))
         {
-            if(ImGui::MenuItem("Undo", "Ctrl+Z")) 
+            if(ImGui::MenuItem("Undo", "Ctrl-Z")) 
             { 
             }
-            if(ImGui::MenuItem("Redo", "Shift+Ctrl+Z")) 
+            if(ImGui::MenuItem("Redo", "Shift-Ctrl-Z")) 
             { 
             }
             ImGui::EndMenu();
@@ -53,14 +53,14 @@ bool Menubar::show()
         }
         if(ImGui::BeginMenu("Add"))
         {
-            if(ImGui::MenuItem("Object", "Shift+Ctrl+O"))
+            if(ImGui::MenuItem("Object", "Shift-Ctrl-O"))
             { 
             }
             ImGui::EndMenu(); 
         }
         if(ImGui::BeginMenu("Tools"))
         {
-            if(ImGui::MenuItem("Simulate", "Shift+Ctrl+S"))
+            if(ImGui::MenuItem("Simulate", "Shift-Ctrl-S"))
             { 
             }
             ImGui::EndMenu(); 

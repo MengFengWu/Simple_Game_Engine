@@ -1,0 +1,8 @@
+<resources>
+   <resource type="graphic" UID="1" filename="bird.png"></resource>
+   <resource type="graphic" UID="2" filename="pipe.png"></resource>
+   <resource type="graphic" UID="3" filename="whitepeople.png"></resource>
+   <resource type="graphic" UID="4" filename="selecting.bmp"></resource>
+   <resource type="audio" UID="5" filename="guncock.mp3"></resource>
+   <resource type="audio" UID="6" filename="gunshot.mp3"></resource>
+</resources>

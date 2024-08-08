@@ -18,6 +18,7 @@ class Window
     
     protected:
         char* mName;
+        bool mVisible;
 
         ImVec2 mSize;
         ImVec2 mPos;

@@ -18,10 +18,12 @@ Window_Attribute::~Window_Attribute()
 
 bool Window_Attribute::show()
 {
+    if(mVisible == false) return false;
+    
     ImGui::SetNextWindowPos(mPos, ImGuiCond_Always);
     ImGui::SetNextWindowSize(mSize, ImGuiCond_Always);
 
-    ImGui::Begin(mName);
+    ImGui::Begin(mName, NULL, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
     ImGui::End();
     return true;
 }

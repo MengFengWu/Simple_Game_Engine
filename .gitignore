@@ -43,3 +43,6 @@ imgui*.ini
 
 ## VScode artifacts
 .vscode
+
+## Data files
+*.json

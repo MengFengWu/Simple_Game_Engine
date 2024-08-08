@@ -18,6 +18,8 @@ Window_Debug::~Window_Debug()
 
 bool Window_Debug::show()
 {
+    if(mVisible == false) return false;
+    
     ImGui::Begin(mName);
     ImGui::End();
     return true;

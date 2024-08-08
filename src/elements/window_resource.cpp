@@ -18,6 +18,8 @@ Window_Resource::~Window_Resource()
 
 bool Window_Resource::show()
 {
+    if(mVisible == false) return false;
+    
     ImGui::SetNextWindowPos(mPos, ImGuiCond_Always);
     ImGui::SetNextWindowSize(mSize, ImGuiCond_Always);
     

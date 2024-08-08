@@ -8,7 +8,7 @@
 #include <string.h>
 
 Window::Window(const char* name, int width, int height, int posX, int posY)
-                : mSize(width, height), mPos(posX, posY)
+                : mSize(width, height), mPos(posX, posY), mVisible(1)
 {
     mName = (char*)malloc((strlen(name) + 1) * sizeof(char));
     strcpy(mName, name);
@@ -35,6 +35,8 @@ bool Window::setName(const char* name)
 
 bool Window::show()
 {
+    if(mVisible == false) return false;
+    
     ImGui::SetNextWindowPos(mPos, ImGuiCond_Always);
     ImGui::SetNextWindowSize(mSize, ImGuiCond_Always);
     
